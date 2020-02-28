@@ -1,0 +1,8 @@
+Options +FollowSymLinks
+
+RewriteEngine on
+RewriteCond %{THE_REQUEST} ^.*\/index\.html?\ HTTP/
+RewriteRule ^(.*)index\.html?$ "/$1" [R=301,L]
+RewriteRule    ^file/([^/]*)/?$    index.php?view=page_file&id=$1    [NC,L]
+RewriteRule    ^edit/([^/]*)/?$    index.php?view=page_edit&id=$1    [NC,L]
+RewriteRule    ^delete/([^/]*)/?$    index.php?view=page_delete&id=$1    [NC,L]

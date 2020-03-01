@@ -79,6 +79,7 @@ if (isset($_POST['name_file'])) {
 
     $quey_update = mysqli_query($link, "UPDATE `data_file` SET `name`='$name_file' WHERE `name_file`='$id_file' LIMIT 1");
     echo msg("Cập nhật thành công");
+    echo btn_add_work($id_file,'vi','file','edit');
 }
 
 $query_file = mysqli_query($link, "select * from `data_file` where `name_file`='$id_file'");
@@ -135,9 +136,9 @@ file_put_contents('temp/avatar_music.png', $song_data_pic);
                 <td>
                     <input id="name_file" name="name_file" type="text" value="<?php echo $data_file['name']; ?>">
                     <span class="buttonPro small" onclick="copy_text_to('#name_file','#song_title');"><i class="fa fa-arrow-down" aria-hidden="true"></i></span>
-                    <span class="buttonPro small blue" onclick="get_tile_file('<?php echo $url_file_full; ?>');"><i class="fa fa-get-pocket" aria-hidden="true"></i></span>
-                    <span class="buttonPro small light_blue" onclick="enter_val();"><i class="fa fa-level-down " aria-hidden="true"></i></span>
-                    <span class="buttonPro small" onclick="search_google();" title="Tìm kiếm thông tin từ google"><i class="fa fa-search" aria-hidden="true"></i></span>
+                    <span class="buttonPro small blue" onclick="get_tile_file('<?php echo $url_file_full; ?>');"><i class="fa fa-get-pocket" aria-hidden="true"></i> Lấy thông tin từ Sever chính</span>
+                    <span class="buttonPro small light_blue" onclick="enter_val();"><i class="fa fa-level-down " aria-hidden="true"></i> Nhập thông tin vào Thông số âm nhạc</span>
+                    <span class="buttonPro small" onclick="search_google();" title="Tìm kiếm thông tin từ google"><i class="fa fa-search" aria-hidden="true"></i> Tìm kiếm thông tin trên google</span>
                 </td>
             </tr>
         </table>

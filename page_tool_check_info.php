@@ -15,7 +15,7 @@
                     if (isset($ThisFileInfo["id3v2"]["comments"])) {
                         $data_music_tag = $ThisFileInfo["id3v2"]["comments"];
                         if(!isset($data_music_tag["title"][0])) {
-                            echo '<a target="_blank" href="'.$url.'/file/'.$file_name.'" class="item_file">'.$file.'<a/>';
+                            echo '<a target="_blank" onclick="$(this).css(\'background-color\',\'yellow\')" href="'.$url.'/file/'.$file_name.'" class="item_file">'.$file.'<a/>';
                         }
                     }
                 }

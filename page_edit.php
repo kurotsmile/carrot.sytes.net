@@ -316,6 +316,7 @@ file_put_contents('temp/avatar_music.png', $song_data_pic);
 
     function search_google() {
         var name_song = $("#name_file").val();
+        name_song=name_song.replace(/[&\/\\#,+()$~%.'":*?<>{}]/g, '');
         window.open("https://www.google.com/search?q=" + name_song);
     }
 

@@ -10,7 +10,7 @@ $song_year = date("Y");
 $song_genre = '';
 $song_comment = 'Songs downloaded from Carrotstore.com';
 $song_lyrics = '';
-$song_lang = '';
+$song_lang = 'vi';
 $song_id = '';
 $fd = fopen('logo.png', 'rb');
 $song_data_pic = fread($fd, filesize('logo.png'));
@@ -80,23 +80,26 @@ if (isset($_POST['name_file'])) {
         echo 'Failed to write tags!<br>' . implode('<br><br>', $tagwriter->errors);
     }
 
-    echo msg("Cập nhật thành công");
+
     $quey_update = mysqli_query($link, "UPDATE `data_file` SET `name`='$name_file' WHERE `name_file`='$id_file' LIMIT 1");
     if ($song_id != '') {
-        echo '<ul style="list-style: none">';
+        echo '<ul style="list-style: none" class="box_info_update">';
+        echo '<li><strong><i class="fa fa-star" aria-hidden="true"></i> Các biên tập viên cần bấm vào nút "Cập nhật vào Carrotstore Music" Trước khi thêm tác vụ vào bàn làm việc!</strong></li>';
         echo '<li>ID đối tượng:<span id="data_song_id">' . $song_id . '</span></li>';
         echo '<li>Nước:<span id="data_song_lang">' . $song_lang . '</span></li>';
         echo '<li>Artist:<span id="data_song_artist">' . $song_artist . '</span></li>';
         echo '<li>Album:<span id="data_song_album">' . $song_album . '</span></li>';
         echo '<li>Year:<span id="data_song_year">' . $song_year . '</span></li>';
         echo '<li>Genre:<span id="data_song_genre">' . $song_genre . '</span></li>';
-        echo '<li><a class="buttonPro small" href="http://carrotstore.com/music/'.$song_id.'/'.$song_lang.'"><i class="fa fa-play-circle-o" aria-hidden="true"></i> Xem trên Carrotstore Music</a></li>';
-        echo '<li><a class="buttonPro small" href="http://carrotstore.com/app_my_girl_update.php?id='.$song_id.'&lang='.$song_lang.'"><i class="fa fa-pencil-square" aria-hidden="true"></i> Xem đối tượng trong cms Virtual lover</a></li>';
+        echo '<li><a class="buttonPro small" target="_blank" href="http://carrotstore.com/music/'.$song_id.'/'.$song_lang.'"><i class="fa fa-play-circle-o" aria-hidden="true"></i> Xem trên Carrotstore Music</a></li>';
+        echo '<li><a class="buttonPro small" target="_blank" href="http://carrotstore.com/app_my_girl_update.php?id='.$song_id.'&lang='.$song_lang.'"><i class="fa fa-pencil-square" aria-hidden="true"></i> Xem đối tượng trong cms Virtual lover</a></li>';
         echo '<li><span class="buttonPro blue" onclick="update_carrotstore_music();$(this).hide(500);return false;"><i class="fa fa-music" aria-hidden="true"></i> Cập nhật vào Carrotstore Music</span></li>';
         echo '</ul>';
     }
 
-    echo btn_add_work($id_file, 'vi', 'file', 'edit');
+    echo msg("Cập nhật thành công");
+    echo btn_add_work($id_file, $song_lang, 'file', 'edit');
+
 }
 
 $query_file = mysqli_query($link, "select * from `data_file` where `name_file`='$id_file'");
@@ -165,6 +168,7 @@ file_put_contents('temp/avatar_music.png', $song_data_pic);
         </table>
 
         <h3>Thông tin âm nhạc</h3>
+        <i>Đây là thông tin được lưu trữ theo tệp tin khi người dùng tải xuống</i>
         <table>
             <tr>
                 <td>title</td>
@@ -332,7 +336,7 @@ file_put_contents('temp/avatar_music.png', $song_data_pic);
         var data_song_genre = $("#data_song_genre").html();
         var data_song_lang = $("#data_song_lang").html();
         var url_act_update = "function=update_carrotstore_music&data_song_id=" + data_song_id + "&data_song_artist=" + data_song_artist + "&data_song_year=" + data_song_year + "&data_song_genre=" + data_song_genre + "&data_song_album=" + data_song_album + "&data_song_lang=" + data_song_lang;
-        //url_act_update=encodeURI(url_act_update);
+        url_act_update=encodeURI(url_act_update);
         $.ajax({
             url: 'http://carrotstore.com/app_my_girl_jquery.php',
             jsonp: "updatemusiccarrotstorecallback",

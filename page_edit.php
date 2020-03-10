@@ -277,6 +277,10 @@ file_put_contents('temp/avatar_music.png', $song_data_pic);
         $("#song_artist").val(split_s[1].trim());
     }
 
+    function NewTab(url) {
+        window.open(url, "_blank");
+    }
+
     gettitlecallback = function (data) {
         var html_txt = data["data"];
         if (data['error'] == '1') {
@@ -291,6 +295,7 @@ file_put_contents('temp/avatar_music.png', $song_data_pic);
             $("#song_lyrics").val(data['lyrics']);
             $("#song_id").val(data['id_song']);
             $("#song_lang").val(data['song_lang']);
+            $("#song_avatar").attr("onclick", "NewTab('"+data['linkytb']+"')");
         }
     };
 

@@ -116,3 +116,28 @@ a:hover{
     margin: 10px;
     list-style: none;
 }
+
+#bar_search{
+    background-color: orange;
+    float: left;
+    width: 100%;
+    margin: 0px;
+}
+
+#bar_search label,input{
+    padding: 5px;
+    float: left;
+    margin: 3px;
+}
+#bar_search input{
+    border-radius: 5px;
+    border: solid 2px chocolate;
+    width: 400px;
+}
+
+#bar_search input[type=submit]{
+    background-color: chocolate;
+    width: auto;
+    color: white;
+    cursor: pointer;
+}

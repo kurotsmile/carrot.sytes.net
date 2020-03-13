@@ -25,6 +25,9 @@ if(!isset($_SESSION['user_login'])){
         header("location: ".$url);
     }
 }
+
+
+
 ?>
 <html>
 <head>
@@ -53,7 +56,7 @@ if(!isset($_SESSION['user_login'])){
             </li>
             <li <?php if ($page_view == 'page_tool') {
                 echo 'class="active"';
-            } ?>><a href="<?php echo $url; ?>?view=page_tool"><i class="fa fa-wrench" aria-hidden="true"></i> Công
+            } ?>><a href="<?php echo $url; ?>/tool"><i class="fa fa-wrench" aria-hidden="true"></i> Công
                     cụ</a>
             </li>
             <li style="float: right">

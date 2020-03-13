@@ -1,3 +1,9 @@
+<form id="bar_search">
+    <label><i class="fa fa-search" aria-hidden="true"></i> Tìm kiếm </label>
+    <input type="text" name="key">
+    <input type="submit" value="Tìm kiếm">
+    <input type="hidden" value="page_search" name="view">
+</form>
 <table class="table_full">
     <tr>
         <th>Tên tệp</th>
@@ -7,7 +13,9 @@
         <th>Thao tác</th>
     </tr>
     <?php
-    $list_data_file=mysqli_query($link,"SELECT * FROM `data_file` order by date desc LIMIT 0, 50");
+    if(!isset($list_data_file)) {
+        $list_data_file = mysqli_query($link, "SELECT * FROM `data_file` order by date desc LIMIT 0, 50");
+    }
     while($row=mysqli_fetch_array($list_data_file)){
         echo '<tr>';
         echo '<td>';

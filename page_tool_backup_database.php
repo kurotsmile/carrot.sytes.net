@@ -1,7 +1,7 @@
 <div class="box_form_add_chat" style="width: 500;margin: 5px;float: left">
     <?php
     $date = date('m-d-Y H:i:s', time()) . '.sql';
-    $filename = "db-work-" . $date;
+    $filename = "db-music-sever-" . $date;
     ?>
 
     <form method="get" name="act_chat_month" style="width: 500px;padding: 10px;" action="database_backup.php">

@@ -335,6 +335,7 @@ file_put_contents('temp/avatar_music.png', $song_data_pic);
     };
 
     function update_carrotstore_music() {
+        swal('Cập nhật vào Carrotstore Muisc', 'Đang xử lý...');
         var data_song_id = $("#data_song_id").html();
         var data_song_artist = $("#data_song_artist").html();
         var data_song_album = $("#data_song_album").html();

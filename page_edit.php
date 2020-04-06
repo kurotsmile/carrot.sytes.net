@@ -28,6 +28,7 @@ if (isset($_POST['name_file'])) {
     $song_album = trim($_POST['song_album']);
     $song_year = trim($_POST['song_year']);
     $song_genre = trim($_POST['song_genre']);
+    $song_genre=str_replace("&"," and ",$song_genre);
     $song_comment = trim($_POST['song_comment']);
     $song_lang = $_POST['song_lang'];
     $song_lyrics = addslashes($_POST['song_lyrics']);
@@ -206,7 +207,9 @@ file_put_contents('temp/avatar_music.png', $song_data_pic);
 
             <tr>
                 <td>genre</td>
-                <td><input name="song_genre" type="text" value="<?php echo $song_genre; ?>"></td>
+                <td><input name="song_genre" type="text" value="<?php echo $song_genre; ?>"><br><br>
+                    <i style="font-size: 12px;"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Trường (Thể loại - genre) này nhập vào phải là dữ liệu ngôn ngữ tiếng anh hoặc trùng với ngôn ngữ lời bài hát (Editor nên đăng xuất tài khoản google ra khỏi trình duyệt để không hiển thị tiếng việt khi tìm kiếm thông tin)</i>
+                </td>
             </tr>
 
             <tr>

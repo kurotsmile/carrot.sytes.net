@@ -68,7 +68,8 @@ if ($func == 'move_file') {
 
 if($func=='save_avatar_music'){
     $url=$_POST['url'];
-    $img = 'temp/avatar_music.png';
+    $id_user=$_POST['id_user'];
+    $img = 'temp/avatar_music'.$id_user.'.png';
     $ch = curl_init($url);
     $fp = fopen($img, 'wb');
     curl_setopt($ch, CURLOPT_FILE, $fp);

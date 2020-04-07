@@ -80,15 +80,15 @@ if (mysqli_num_rows($query_file) > 0) {
                onclick="if(!confirm('Bạn có chắc là muốn xóa?')){return false;}"><i class="fa fa-trash-o"
                                                                                     aria-hidden="true"></i> Xóa tệp tin
                 này</a>
-            <a onclick="check_file('<?php echo $url_file_full; ?>')" class="buttonPro orange"><i class="fa fa-search"
-                                                                                                 aria-hidden="true"></i>
-                Kiểm tra đối tượng sử dụng</a>
+            <a onclick="check_file('<?php echo $url_file_full; ?>')" class="buttonPro orange"><i class="fa fa-search" aria-hidden="true"></i> Kiểm tra đối tượng sử dụng</a>
             <a class="buttonPro yellow" href="<?php echo $url;?>/edit/<?php echo $id_file; ?>"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Chỉnh sửa thông tin</a>
             <?php
         } else {
             ?>
             <i class="fa fa-file-o" aria-hidden="true"></i> Tệp tin
             <b><?php echo $id_file; ?></b> không còn tồn tại trong hệ thống
+            <a href="<?php echo $url;?>/delete/<?php echo $id_file ?>" class="buttonPro red"><i class="fa fa-trash" aria-hidden="true"></i> Xóa dữ liệu tệp tin này</a>
+            <a onclick="check_file('<?php echo 'data_file/mp3/'.$id_file; ?>')" class="buttonPro orange"><i class="fa fa-search" aria-hidden="true"></i> Kiểm tra đối tượng sử dụng</a>
             <?php
         }
         ?>

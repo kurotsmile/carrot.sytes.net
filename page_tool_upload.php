@@ -6,7 +6,7 @@
         $target_file = $target_dir . basename($_FILES["file_data"]["name"]);
         $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
         $name_new_file=uniqid().uniqid().'.' . $imageFileType;
-        $path_new_file = $target_dir.uniqid().uniqid().'.' . $imageFileType;
+        $path_new_file = $target_dir.$name_new_file;
 
         $uploadOk = 1;
 

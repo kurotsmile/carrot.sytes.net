@@ -22,3 +22,9 @@
     <strong>Sao lưu dữ liệu</strong>
     <span>Sao lưu lại cơ sở dư liệu không bao gồm các các tệp tin vật lý</span>
 </a>
+
+<a  href="<?php echo $url;?>?view=page_tool_upload" class="tool_item">
+    <i class="fa fa-upload" aria-hidden="true"></i>
+    <strong>Tải lên tệp</strong>
+    <span>Tải lên tệp tin muốn lưu trữ</span>
+</a>

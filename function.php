@@ -6,7 +6,7 @@ function downloadUrlToFile($url, $outFileName)
     } else {
         $options = array(
           CURLOPT_FILE    => fopen($outFileName, 'w'),
-          CURLOPT_TIMEOUT =>  28800, // set this to 8 hours so we dont timeout on big files
+          CURLOPT_TIMEOUT =>  998800, // set this to 8 hours so we dont timeout on big files
           CURLOPT_URL     => $url
         );
 

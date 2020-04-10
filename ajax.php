@@ -1,4 +1,6 @@
 <?php
+ini_set('post_max_size', '90M');
+ini_set('upload_max_filesize', '90M');
 header("Access-Control-Allow-Origin: *");
 include "config.php";
 include "database.php";

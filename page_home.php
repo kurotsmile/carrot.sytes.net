@@ -32,6 +32,7 @@ $disk_used = $disk_total - $disk_free;
             <li>carrot.sytes.net Máy chủ lưu trữ âm nhạc và quản lý thông tin</li>
             <li>carrot.data.net Tương tự như máy chủ carrot.style.net dữ liệu được lưu trữ nhiều nơi nhằm tăng tính bảo mật và không bị mất toàn bộ khi bị tất công hoặc hệ thống gặp vấn đề</li>
         </ul>
+            <a href="<?php echo $url;?>/?view=page_tool_upload" class="buttonPro large orange"><i class="fa fa-cloud-upload" aria-hidden="true"></i> Bắt đầu lưu trữ tệp tin</a>
         </div>
     </div>
 </div>

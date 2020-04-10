@@ -62,8 +62,8 @@ if (isset($_POST['name_file'])) {
         'comment' => array($song_comment),
         'unsynchronised_lyric' => array($song_lyrics),
     );
-    $fd = fopen('temp/avatar_music.png', 'rb');
-    $APICdata = fread($fd, filesize('temp/avatar_music.png'));
+    $fd = fopen('temp/avatar_music'.$_SESSION['user_login'].'.png', 'rb');
+    $APICdata = fread($fd, filesize('temp/avatar_music'.$_SESSION['user_login'].'.png'));
     fclose($fd);
     $TagData['attached_picture'][0]['data'] = $APICdata;
     $TagData['attached_picture'][0]['picturetypeid'] = 0x03;
@@ -145,7 +145,7 @@ if (mysqli_num_rows($query_file) > 0) {
         $song_data_pic = $song_data_pic['data'];
     }
 }
-file_put_contents('temp/avatar_music.png', $song_data_pic);
+file_put_contents('temp/avatar_music'.$_SESSION['user_login'].'.png', $song_data_pic);
 ?>
 <div style="float: left;width: 100%">
     <form style="float: left;padding: 20px;font-size: 13px;" method="post" action="">
@@ -315,9 +315,9 @@ file_put_contents('temp/avatar_music.png', $song_data_pic);
         $.ajax({
             url: '<?php echo $url;?>/ajax.php',
             method: "POST",
-            data: "func=save_avatar_music&url=" + url_img,
+            data: "func=save_avatar_music&url=" + url_img+"&id_user=<?php echo $_SESSION['user_login'];?>",
             success: function (data) {
-                $("#song_avatar").attr("src", "<?php echo $url;?>/temp/avatar_music.png");
+                $("#song_avatar").attr("src", "<?php echo $url;?>/temp/avatar_music<?php echo $_SESSION['user_login'];?>.png");
             }
         });
     }

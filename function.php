@@ -150,3 +150,9 @@ function smart_resize_image($file, $string = null, $width = 0, $height = 0, $pro
 
     return true;
 }
+
+function btn_add_work($id_object,$lang,$type,$action){
+    $txt_html='';
+    $txt_html.='<a  target="_blank" class="buttonPro blue" href="http://work.carrotstore.com/?id_object='.$id_object.'&lang='.$lang.'&type_chat='.$type.'&type_action='.$action.'"><i class="fa fa-desktop" aria-hidden="true"></i> Thêm vào bàn làm việc</a>';
+    return $txt_html;
+}

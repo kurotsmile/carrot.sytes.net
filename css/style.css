@@ -124,7 +124,7 @@ a:hover{
     margin: 0px;
 }
 
-#bar_search label,input{
+#bar_search label,#bar_search input{
     padding: 5px;
     float: left;
     margin: 3px;

@@ -7,7 +7,7 @@
             $id_delete = $_GET['id'];
             $query_file = mysqli_query($link, "select * from data_file where name_file='$id_delete'");
             $data_file = mysqli_fetch_array($query_file);
-            unlink($data_file["path"]);
+            if(file_exists($data_file["path"])) unlink($data_file["path"]);
             $query_delete_file = mysqli_query($link, "DELETE from data_file where name_file='$id_delete'");
             echo msg("Xóa thành công tệp " . $id_delete . " !", "alert");
         } else {

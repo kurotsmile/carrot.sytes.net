@@ -49,11 +49,6 @@ if(!isset($_SESSION['user_login'])){
         } ?>><a href="<?php echo $url; ?>?view=page_home"><i class="fa fa-database"
                                                              aria-hidden="true"></i> Tổng quát</a></li>
         <?php if (isset($_SESSION['user_login'])) { ?>
-            <li <?php if ($page_view == 'page_manager_file') {
-                echo 'class="active"';
-            } ?>><a href="<?php echo $url; ?>?view=page_manager_file"><i class="fa fa-files-o" aria-hidden="true"></i>
-                    Quản lý tệp</a>
-            </li>
             <li <?php if ($page_view == 'page_tool') {
                 echo 'class="active"';
             } ?>><a href="<?php echo $url; ?>/tool"><i class="fa fa-wrench" aria-hidden="true"></i> Công

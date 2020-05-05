@@ -29,8 +29,7 @@ $disk_used = $disk_total - $disk_free;
         <ul>
             <li><i><i class="fa fa-plug" aria-hidden="true"></i> Máy chủ này được tạo ra để giải quyết vấn đề lưu trữ dữ liệu cho máy chủ chính <a href="http://carrotstore.com" target="_blank">Carrotstore.com</a> . Tránh khỏi phải đầy dung lượng ,mất dữ liệu quang trọng và quảng lý các tệp tin tải lên dễ dàng hơn</i></li>
             <li><a href="http://carrotstore.com" target="_blank">carrotstore.com</a> Máy chủ chính nơi điều hướng các chức năng liên quan tới ứng và hệ thống các CMS</li>
-            <li>carrot.sytes.net Máy chủ lưu trữ âm nhạc và quản lý thông tin</li>
-            <li>carrot.data.net Tương tự như máy chủ carrot.style.net dữ liệu được lưu trữ nhiều nơi nhằm tăng tính bảo mật và không bị mất toàn bộ khi bị tất công hoặc hệ thống gặp vấn đề</li>
+            <li><?php echo $url;?> Máy chủ lưu trữ âm nhạc và quản lý thông tin, dữ liệu được lưu trữ nhiều nơi nhằm tăng tính bảo mật và không bị mất toàn bộ khi bị tất công hoặc hệ thống gặp vấn đề</li>
         </ul>
             <?php if(isset($_SESSION['user_login'])) {?><a href="<?php echo $url;?>/?view=page_tool_upload" class="buttonPro large orange"><i class="fa fa-cloud-upload" aria-hidden="true"></i> Bắt đầu lưu trữ tệp tin</a><?php }?>
         </div>

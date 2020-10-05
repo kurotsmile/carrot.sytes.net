@@ -1,4 +1,4 @@
-# carrot.sytes.net
+# carrotaudio.com
 Dự án máy chủ dữ liệu lưu trữ nhạc tại nhà
 
 +Cách thiết lập sau khi clone về:
